@@ -1,10 +1,10 @@
 # CMPS 6100  Lab 02
 
-In this lab, we will perform some data analysis. The National Centers for Environmental Information within NOAA publishes large datasets of climate and weather data. In this lab, we will analyze temperature data for New Orleans, specifically from a weather station located in Audubon Park across from Tulane's campus.
+In this lab, we will perform some data analysis. The National Centers for Environmental Information within NOAA publishes large datasets of climate and weather data. You'll analyze temperature data for New Orleans, specifically from a weather station located in Audubon Park across from Tulane's campus. You will also analyze a dataset of your choice.
 
 Some prompts will require you to edit `main.py` and others will require answers will go in `answers.md`.
 
-Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and 
+Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and materials provided in `answers.md`.
 
 Refer back to the [README.md](README.md) for instruction on git, how to test your code, and how to submit properly to get all the points you've earned.
 
