@@ -1,6 +1,6 @@
 # CMPS 6100  Lab 02
 
-In this lab, we will 
+In this lab, we will perform some data analysis, analyzing historical temperature datasets provided by NOAA.
 
 To complete this lab, follow the instructions in [lab-02.md](lab-02.md) ([PDF version](lab-02.pdf)). Below you'll find important and useful information about submitting your work, using git, and testing your code. 
 
