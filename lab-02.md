@@ -6,6 +6,8 @@ In this lab, we will perform some data analysis. The National Centers for Enviro
 
 Some prompts will require you to edit `main.py` and others will require answers will go in `answers.md`.
 
+Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and 
+
 Refer back to the [README.md](README.md) for instruction on git, how to test your code, and how to submit properly to get all the points you've earned.
 
 ## The Data Set
@@ -72,6 +74,12 @@ Your goal in this lab is to read in general datasets formatted as stated above a
 12. Outside of the outliers, the yearly plot is pretty messy. Now plot the data, but averaged out over the decades instead of individual years. You can call on the `plot_temperatures()`  to do this. You can also implement a helper function to do so as well. A function `get_decades_in_dataset()` is provided to you which returns a list of all full decades included in the dataset. You may use it if it is useful to you.
 
 13. Now generate yearly and decadal plots, but for the location of your choice. Add your dataset and images of your plots to your repository, and embed the plots in answers.md.
+
+## Wrapping Up
+
+Don't forget to add all necessary files to your repository, including your chosen dataset, and the images for all plots you have generated. Ensure that it is all pushed to GitHub.
+
+Once you've pushed your completed lab to GitHub, don't forget to submit your link to Canvas.
 
 ## Epilogue
 
