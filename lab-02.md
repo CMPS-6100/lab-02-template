@@ -2,8 +2,6 @@
 
 In this lab, we will perform some data analysis. The National Centers for Environmental Information within NOAA publishes large datasets of climate and weather data. In this lab, we will analyze temperature data for New Orleans, specifically from a weather station located in Audubon Park across from Tulane's campus.
 
-[NOAA's Climate Data Search Tool](https://www.ncei.noaa.gov/cdo-web/search)
-
 Some prompts will require you to edit `main.py` and others will require answers will go in `answers.md`.
 
 Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and 
