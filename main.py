@@ -3,7 +3,8 @@ CMPS 6100  Lab 2
 Author: 
 """
 
-### the only imports needed are here
+### You will need or may find these imports useful
+### You may add other imports to this section.
 import tabulate
 import matplotlib.pyplot as plt
 import math
