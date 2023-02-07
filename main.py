@@ -150,7 +150,14 @@ def print_table(climate_averages, table_headers):
         For example: 
             ['Year', 'Ave Precip', 'Ave High', 'Ave Low']
     climate_averages : list<tuple>
-        Every other row contains the values
+        A list tuples of the form 
+            (year, ave_precip, ave_daily_high, ave_daily_low)
+        or
+            (decade, ave_precip, ave_daily_high, ave_daily_low)
+        Where year or decade is an individual year or decade, for example,
+        1945 for the year 1945, or 1980 or the decade of the 1980s. The
+        following values in the tuple are the averages over that time period.
+        The tuple will contain one tuple per time period to be printed out.
     """
     print(tabulate.tabulate(climate_averages[1:],
         headers = table_headers,
