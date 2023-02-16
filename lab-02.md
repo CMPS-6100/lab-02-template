@@ -2,7 +2,7 @@
 
 In this lab, we will perform some data analysis. The National Centers for Environmental Information within NOAA publishes large datasets of climate and weather data. You'll analyze temperature data for New Orleans, specifically from a weather station located in Audubon Park across from Tulane's campus. You will also analyze a dataset of your choice.
 
-Some prompts will require you to edit `main.py` and others will require answers will go in `answers.md`.
+Some prompts will require you to edit `main.py` and others will require answers to go in `answers.md`.
 
 Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and materials provided in `answers.md`.
 
@@ -52,7 +52,7 @@ Your goal in this lab is to read in datasets formatted as stated above and to pl
 
 7. Implement `calculate_decade_averages()`. Again, similar to above, just a different scope of time
 
-8. With the calculation functions implemented, now implement `get_yearly_averages()`. This function returns a list of the averages for each year. The return is structured as a list of tuples. Every tuple contains its year, and the three averages: precipitation, high, and low. By default, there should be a tuple for every year in the dataset. If a list of years is passed into this function, then only return the data for those years. 
+8. With the calculation functions implemented, now implement `get_yearly_averages()`. This function returns a list of the averages for the specified years. The return is structured as a list of tuples. Every tuple contains its year, and the three averages: precipitation, high, and low. 
 
 9. Implement `get_decadal_averages()`. This is the same as `get_yearly_averages()` except now on the decade scale.
 

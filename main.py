@@ -94,7 +94,7 @@ def calculate_decade_averages(daily_summaries, decade):
     """
     pass # replace this line with your implementation
 
-def get_yearly_averages(daily_summaries, years=[]):
+def get_yearly_averages(daily_summaries, years):
     """
     Return a list of tuples, containing the precipitation,
     daily high, and daily low averages for each year
@@ -104,7 +104,7 @@ def get_yearly_averages(daily_summaries, years=[]):
     daily_summaries : dict
         the dictionary containing all the daily summary data
     years : list
-        a list of years to get the averages for
+        a list of years to get the averages for.
 
     Returns
     -------
@@ -115,7 +115,7 @@ def get_yearly_averages(daily_summaries, years=[]):
     """
     pass # replace this line with your implementation
 
-def get_decadal_averages(daily_summaries, decades=[]):
+def get_decadal_averages(daily_summaries, decades):
     """
     Return a list of tuples, containing the precipitation,
     daily high, and daily low averages for each decade
@@ -165,8 +165,8 @@ def print_table(climate_averages, table_headers):
         tablefmt="github"))
 
 def plot_yearly_temperatures(daily_summaries, plot_title):
-    yearly_aves = get_yearly_averages(daily_summaries)
     years = list(daily_summaries.keys())
+    yearly_aves = get_yearly_averages(daily_summaries, years)
     plot_temperatures(yearly_aves, years, "Year", plot_title)
   
 def get_decades_in_dataset(data):
