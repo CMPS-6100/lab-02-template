@@ -37,11 +37,13 @@ Your goal in this lab is to read in datasets formatted as stated above and to pl
 4. Start by implementing `read_in_dataset`. This function takes in the filename of a file formatted as discussed above. It will read in the file and store the data in a dictionary. It is up to you exactly how how you choose to structure the data. The one requirement is that you use a dictionary whose keys are individual years in the dataset. 
 
      Example usage:
+
     ``` python
     daily_summaries = read_in_dataset("nola-temps.csv")
     single_year_data = daily_summaries[2021]
     list_of_years_in_dataset = list(daily_summaries.keys())
     ```
+    
     You will need to be careful about missing data here. I suggest for ease of analysis later that you fill in any missing precipitation data as `0.0`, and omit any lines which are missing either temperature data point.
 
     After implementing this function, I recommend informally testing it to make sure that your dictionary is structured as you expect.
