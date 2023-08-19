@@ -1,94 +1,79 @@
 # CMPS 6100  Lab 02
 
-In this lab, we will perform some data analysis. The National Centers for Environmental Information within NOAA publishes large datasets of climate and weather data. You'll analyze temperature data for New Orleans, specifically from a weather station located in Audubon Park across from Tulane's campus. You will also analyze a dataset of your choice.
+In this lab, you will implement a game!
 
-Some prompts will require you to edit `main.py` and others will require answers to go in `answers.md`.
-
-Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementations and materials provided in `answers.md`.
+Unlike Lab 01, this lab does not have automated tests. Your grade for this lab will be based on your implementation.
 
 Refer back to the [README.md](README.md) for instruction on git and how to submit properly to get all the points you've earned.
 
-## The Data Set
+## The Ghost Game (11 pts)
 
-An example dataset is provided in the file `nola-temps.csv`. This is a Comma Separated Values file whose format makes it easy to read in, even easier since python has a built-in module for reading from csv files: [csv module](https://docs.python.org/3/library/csv.html).
+Implement the Ghost Game that we discussed in lecture. In this game, the player is trying to escape a haunted mansion before being captured by a ghost. In order to escape, the player must discover the room containing a portkey which allows them to teleport out of the mansion.
 
-The format of the file is pretty simple. The first line in the file is a header which contains labels for each column in the file. All following lines contain weather data for an individual day. 
+For every turn of the game, the player is presented with a description of the room they are in along with where its exits are. The player then chooses which exit to go through to enter a new room. If the player enters the room with the portkey, they win. If they enter the room with the ghost, they lose.
 
-Each line has six fields. The first two state the weather station and its name. The next is the date in [ISO format](https://en.wikipedia.org/wiki/ISO_8601) (the best data format). After that is the precipitation measured in inches, followed by the high and low temperature for that day measured in Farenheit. 
+At the beginning of the game, the locations of the ghost and portkey are randomly decided among all rooms that are not the starting location which is always room 0.
 
-Not every line has complete data. Any of the precipitation, high, or low fields may be missing.
+Every turn, the ghost will move from its room into an adjacent room by random choice.
 
-This data was downloaded from the NCEI's [Climate Data Search Tool](https://www.ncei.noaa.gov/cdo-web/search?datasetid=NORMAL_DLY). You can also download the same data for locations around the country from this portal, for example, from your home town. To download a file containing the same fields as provided for this lab, search for datasets of the type Daily Summaries. When you find a location you like, add it to your "cart" and "check out". For file format, choose "Custom GHCN-Daily CSV, select your date range, and then select the data you want included. You'll want to choose standard "Precipitation (PRCP)" under the Precipitation options, and "Maximum temperature (TMAX)" and "Minimum Temperature (TMIN)" under the Air Temperature options.
+### Input
 
-1. Examine `nola-temps.csv` and get familiar with its format.
+Your game should read in an input file specifying the layout of the mansion. The format of the file is as follows:
 
-2. Download the same data for a location of your choice. In this lab, you will generate plots for the NOLA dataset, and then for the dataset of your choice. What is the location for your chosen dataset? Download your dataset and add it to your repository.
+- Any lines that begin with a `#` are comments and should be ignored when the file is read in.
 
-## The Lab
+- The first non-comment line of the file is the number $n$, the number of rooms in the mansion.
 
-Your goal in this lab is to read in datasets formatted as stated above and to plot the trends in average temperates over years and decades.
+- The next $n$ lines contain three values separated by colons: a room identifier given as an int, the room name, then a description for that room.
 
-3. Skim through main.py to get a sense of its structure. You have several stubbed out functions that you will implement to read in and analyze the data. Each funtion is documented to explain its purpose, parameters, and required return.
+- All lines after that give the connections between the rooms. Each of these lines contain ints separated by colons. The first int is a room ID, the next four values are the IDs of the rooms through its exits. The exits are given by cardinal direction in the order of East, North, West, then South. Any direction which does not have an exit is given a value of -1.
 
-    Towards the bottom you will also find implemented functions to print and plot the data once you've implemented the ones above.
+An example input file is provided for you: `the-stilts.txt`
 
-    Finally, example usage code is given at the bottom to illustrate how to actually plot and print the data.
+Before running your game on this map, draw it out by hand so that you can refer your map to verify that your game behaves as expected. It may also be easier to create a simpler map to test your game on.
 
-4. Start by implementing `read_in_dataset`. This function takes in the filename of a file formatted as discussed above. It will read in the file and store the data in a dictionary. It is up to you exactly how how you choose to structure the data. The one requirement is that you use a dictionary whose keys are individual years in the dataset. 
+### Advice
 
-     Example usage:
+For this program, I recommend that you start by deciding how you will represent the data for the room layout. After that, implement your game by breaking it up into functions. This will make it easier to develop, test, and debug. Speaking of which, test early and often!
 
-    ``` python
-    daily_summaries = read_in_dataset("nola-temps.csv")
-    single_year_data = daily_summaries[2021]
-    list_of_years_in_dataset = list(daily_summaries.keys())
-    ```
-    
-    You will need to be careful about missing data here. I suggest for ease of analysis later that you fill in any missing precipitation data as `0.0`, and omit any lines which are missing either temperature data point.
+### Customizing the game
 
-    After implementing this function, I recommend informally testing it to make sure that your dictionary is structured as you expect.
+Please do create your own maps. Create at least one map of your own design. 
 
-5. Once you have decided on the structure of your data, read it in, and tested that it is structured correctly, implement `calculate_month_averages()`. This function calculates and returns the average daily precipiation, high, and low for a specific month. It returns this information as a single tuple containing the three averages. If the specified month is missing from the dataset, return `(math.nan, math.nan, math.nan)`.
+13. Add the text file for your map and a drawn image of it to your repository. Note the names of these files in `answers.md`. Pro-move: embed an image of the map into `answers.md`.
 
-6. Implement `calculate_year_averages()`. This is much the same as the month averages function, but everything is averaged over a whole year. You can use `calculate_month_averages()` to implement `calculate_year_averages()`.
+Also, feel free to change the context of the game. Maybe its a zombie in a hospital, or a vampire, or a tear in space-time that is wandering the halls of a lab. Have fun with it!
 
-7. Implement `calculate_decade_averages()`. Again, similar to above, just a different scope of time
+## Bonus
 
-8. With the calculation functions implemented, now implement `get_yearly_averages()`. This function returns a list of the averages for the specified years. The return is structured as a list of tuples. Every tuple contains its year, and the three averages: precipitation, high, and low. 
+### Remembering Rooms (3 points)
 
-9. Implement `get_decadal_averages()`. This is the same as `get_yearly_averages()` except now on the decade scale.
+By default, when the player enters a new room, they won't know what is on the other side of each exit. By default, they should be told where the exits are but not what is on the other side. 
 
-    With this, you've finished the number crunching and major implementation part of this lab! Now let's examine the data.
+After the player has discovered a room, remember this information and update the exit messages appropriately.
 
-10. Plot the yearly averages for all years in the provided nola-temps dataset. Add images of your plots to your repository and embed them in your `answers.md`
+For example:
 
-    You can embed `image.png` stored in the same directory as `answers.md` by adding the line:
+```
+You have entered the Dining Room...
+There is an exit to the East.
+There is an exit to the South.
 
-    ```
-    <img src = "image.png" width = "100%">
-    ```
+...
+User chooses to go East.
+...
 
-    to `answers.md`
+You have entered the Kitchen...
+There is an exit to the North.
+There is an exit to the Dining Room to the West.
+```
 
-    
-11. Looking at your yearly plot, you will probably notice a few years that are outliers, whose averages are way too low to be correct. There are two in particular that stand out. Which years are they and why are they outliers? What could you do to guard against this so that you could reliably identify trends?
+#### Additional Features (up to 5 bonus points)
 
-12. Outside of the outliers, the yearly plot is pretty messy. Now plot the data, but averaged out over the decades instead of individual years. You can call on the `plot_temperatures()`  to do this. You can also implement a helper function to do so as well. A function `get_decades_in_dataset()` is provided to you which returns a list of all full decades included in the dataset. You may use it if it is useful to you.
+Other functionality and added features are also welcome! Again, be creative and have fun. 
 
-13. Now generate yearly and decadal plots, but for the location of your choice. Add your dataset and images of your plots to your repository, and embed the plots in answers.md.
-
-14. What trends do you see in your plots, if any? 
-
-## Wrapping Up
-
-Don't forget to add all necessary files to your repository, including your chosen dataset, and the images for all plots you have generated. Ensure that it is all pushed to GitHub.
-
-Once you've pushed your completed lab to GitHub, don't forget to submit your link to Canvas.
+14. If you add new features to the game, document them in `answers.md`.
 
 ## Epilogue
 
-We've calculated and plotted averages for temperatures across over a century. We didn't even examine the precipitation data, even though we read and processed it. There is so much more that we could do. What about examining trends over individual months? For example, what are the trends for the winters across the dataset? We could, for example, look at the average lows for February of every year. Or we could examine the highs for June of every year.
-
-This all isn't even to mention all of the other data that would could download from NOAA.
-
-With your skills as programmers, insights from the world's data are at your fingertips.
+You've implemented a fun game, continuing to practice and hone your skills as a programmer. I look forward to playing it!

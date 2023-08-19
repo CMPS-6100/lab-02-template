@@ -1,11 +1,11 @@
 # CMPS 6100  Lab 02
 
-In this lab, we will perform some data analysis, analyzing historical temperature datasets provided by NOAA.
+In this lab, you will implement a game!
 
 To complete this lab, follow the instructions in [lab-02.md](lab-02.md) ([PDF version](lab-02.pdf)). Below you'll find important and useful information about submitting your work, using git, and testing your code. 
 
 ## Turning in your work
-- At the top of `main.py` and in the `answers.md` file, **include your name**.
+- At the top of `main.py`, **include your name**.
 - Once you have pushed your final submission to GitHub, go to Canvas and submit a link to your repository to the Canvas assignment for this lab. 
 
 ## Using Git 
