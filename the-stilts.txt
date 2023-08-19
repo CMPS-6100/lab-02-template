@@ -18,9 +18,9 @@
 14: Beautiful Bedroom: This room is beautifully appointed. There is a rosewood desk with a closed laptop on top of it. Against the wall is a bookcase containing Meditations by Marcus Aurelius, a yellowed PDP-11 user manual, the Complete Sherlock Holmes, and The C Programming Language by Kernighan and Ritchie. An ivy vine frames the window and doorframe. On the bed lays a man with a purple cravat and an IV embedded in his arm.
 15: Water Closet: This guest bathroom is simple but functional. There is a shower, a razor on the counter, and a strop hangin on the wall.
 # Room Exits: a room ID followed by the exits from that room
-# The exits are given for cardinal directions: East, North, West, South
+# The exits are given for cardinal directions: West, North, East, South
 # -1 indicates there is no exit for that direction
-#    E   N   W   S
+#    W   N   E   S
 0:   1:  3:  2: -1
 1:  -1: -1:  0: -1
 2:   0: -1: -1: -1
