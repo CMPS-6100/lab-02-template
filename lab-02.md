@@ -6,7 +6,7 @@ Unlike Lab 01, this lab does not have automated tests. Your grade for this lab w
 
 Refer back to the [README.md](README.md) for instruction on git and how to submit properly to get all the points you've earned.
 
-## The Ghost Game (11 pts)
+## The Ghost Game (25 pts)
 
 Implement the Ghost Game that we discussed in lecture. In this game, the player is trying to escape a haunted mansion before being captured by a ghost. In order to escape, the player must discover the room containing a portkey which allows them to teleport out of the mansion.
 
@@ -46,7 +46,7 @@ Also, feel free to change the context of the game. Maybe its a zombie in a hospi
 
 ## Bonus
 
-### Remembering Rooms (3 points)
+### Remembering Rooms (5 points)
 
 By default, when the player enters a new room, they won't know what is on the other side of each exit. By default, they should be told where the exits are but not what is on the other side. 
 
@@ -67,12 +67,6 @@ You have entered the Kitchen...
 There is an exit to the North.
 There is an exit to the Dining Room to the West.
 ```
-
-#### Additional Features (up to 5 bonus points)
-
-Other functionality and added features are also welcome! Again, be creative and have fun. 
-
-14. If you add new features to the game, document them in `answers.md`.
 
 ## Epilogue
 
