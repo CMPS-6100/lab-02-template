@@ -40,7 +40,7 @@ For this program, I recommend that you start by deciding how you will represent 
 
 Please do create your own maps. Create at least one map of your own design. 
 
-13. Add the text file for your map and a drawn image of it to your repository. Note the names of these files in `answers.md`. Pro-move: embed an image of the map into `answers.md`.
+1. Add the text file for your map and a drawn image of it to your repository. Note the names of these files in `answers.md`. Pro-move: embed an image of the map into `answers.md`.
 
 Also, feel free to change the context of the game. Maybe its a zombie in a hospital, or a vampire, or a tear in space-time that is wandering the halls of a lab. Have fun with it!
 
