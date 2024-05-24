@@ -8,11 +8,11 @@ Refer back to the [README.md](README.md) for instruction on git and how to submi
 
 ## The Ghost Game (25 pts)
 
-Implement the Ghost Game that we discussed in lecture. In this game, the player is trying to escape a haunted mansion before being captured by a ghost. In order to escape, the player must discover the room containing a portkey which allows them to teleport out of the mansion.
+In this lab, you will implement a text-based adventure game: The Ghost Game. The premise of the game is simple. In it, the player is trying to escape a haunted mansion before being captured by a ghost. In order to escape, the player must discover the room containing a portkey which allows them to teleport out of the mansion.
 
 For every turn of the game, the player is presented with a description of the room they are in along with where its exits are. The player then chooses which exit to go through to enter a new room. If the player enters the room with the portkey, they win. If they enter the room with the ghost, they lose.
 
-At the beginning of the game, the locations of the ghost and portkey are randomly decided among all rooms that are not the starting location which is always room 0.
+At the beginning of the game, the locations of the ghost and portkey are randomly decided among all rooms, omitting starting location which is always room 0. The ghost and portkey should not be placed in the starting location.
 
 Every turn, the ghost will move from its room into an adjacent room by random choice.
 
